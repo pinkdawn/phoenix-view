@@ -4,3 +4,5 @@ node/
 node_modules/
 src/main/resources/ui/bower_components/
 /.idea
+/src/main/webapp/ui/bower_components
+/*.iml
