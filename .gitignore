@@ -3,3 +3,4 @@ etc/
 node/
 node_modules/
 src/main/resources/ui/bower_components/
+/.idea

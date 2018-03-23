@@ -8,18 +8,32 @@
     <display-name>example</display-name>
     <description>View for dealing with RealTime data from Kafka and Phoenix</description>
     <welcome-file-list>
-      <welcome-file>ui/index.html</welcome-file>
+        <welcome-file>ui/index.html</welcome-file>
     </welcome-file-list>
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>com.github.randerzander.view.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>requestEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <!-- REST endpoints -->
     <servlet>
-      <servlet-name>services</servlet-name>
-      <servlet-class>com.github.randerzander.view.Services</servlet-class>
+        <servlet-name>services</servlet-name>
+        <servlet-class>com.github.randerzander.view.Services</servlet-class>
     </servlet>
     <servlet-mapping>
-      <servlet-name>services</servlet-name>
-      <url-pattern>/services/</url-pattern>
-      <url-pattern>/services</url-pattern>
+        <servlet-name>services</servlet-name>
+        <url-pattern>/services/</url-pattern>
+        <url-pattern>/services</url-pattern>
     </servlet-mapping>
 
     <!-- WebSockets 
@@ -36,9 +50,9 @@
 
     <!-- Static/UI elements -->
     <servlet-mapping>
-      <servlet-name>default</servlet-name>
-      <url-pattern>/</url-pattern>
-      <url-pattern>/ui/*</url-pattern>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/ui/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
